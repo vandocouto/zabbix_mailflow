@@ -12,17 +12,17 @@ def mailflow():
     try:
         # até 2 minutos
         envia=enviamail("mailflow@%s" %sys.argv[1])
-        time.sleep(115)
+        time.sleep(110)
         valida=checkmail()
-        # até 12 minnutos
+        # acima de 2 minutos
         if (str(valida) == "Erro-3"):
-            time.sleep(475)
+            time.sleep(230)
             valida=checkmail()
-	    if (str(valida) < '0:04:00'):
+	    if (str(valida) > '0:02:00') and (str(valida) < '0:04:00'):
             	arq = open('%s.log' %sys.argv[1] , 'w')
             	arq.write("%s - ATENCAO" %valida)
             	return valida
-	    else: 
+	    elif (str(valida) > '0:04:00'):
             	arq = open('%s.log' %sys.argv[1] , 'w')
             	arq.write("%s - MEDIA" %valida)
             	return valida
