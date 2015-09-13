@@ -11,13 +11,14 @@ def enviamail(mailflow):
     from datetime import datetime
     import smtplib
     from email.MIMEText import MIMEText
+    from acesso import acesso
     
     # variaveis
-    SMTP    =   "smtp.gmail.com"
-    PORTA   =   "465"
-    LOGIN   =   "login"
-    EMAIL   =   "login@gmail.com"
-    PASS    =   "senha"
+    SMTP    =   acesso()[3]
+    PORTA   =   acesso()[4]
+    LOGIN   =   acesso()[5]
+    EMAIL   =   acesso()[6]
+    PASS    =   acesso()[7]
     FMT     =   '%H:%M:%S'
 
     # checando a porta de conexão

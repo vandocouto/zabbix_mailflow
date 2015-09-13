@@ -7,13 +7,14 @@ def checkmail():
     # bibliotecas
     import imaplib
     from datetime import datetime
+    from acesso import acesso
     
     # formato do horario 
     FMT = '%H:%M:%S'
     try:
         # imap
-        mail = imaplib.IMAP4_SSL('imap.dominio.com.br')
-        mail.login('mailflow', 'senha')
+        mail = imaplib.IMAP4_SSL(acesso()[0])
+        mail.login(acesso()[1],acesso()[2])
         mail.list()
         mail.select("inbox") 
     except:
@@ -42,6 +43,7 @@ def checkmail():
         # retornando resultado
         return tdelta
     except:
+	# apagando o útlimo email
         return "Erro-3"
 
 
