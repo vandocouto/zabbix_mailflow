@@ -4,7 +4,7 @@
 # 
 def enviamail(mailflow):
     
-    # bibliotecas
+    # bibliotecas.
     import os
     import commands
     import time
@@ -13,7 +13,7 @@ def enviamail(mailflow):
     from email.MIMEText import MIMEText
     from acesso import acesso
     
-    # variaveis
+    # variaveis.
     SMTP    =   acesso()[3]
     PORTA   =   acesso()[4]
     LOGIN   =   acesso()[5]
@@ -21,23 +21,23 @@ def enviamail(mailflow):
     PASS    =   acesso()[7]
     FMT     =   '%H:%M:%S'
 
-    # checando a porta de conexão
+    # checando a porta de conexão.
     if (int(PORTA) == 465):
         SMTPSERVER = smtplib.SMTP_SSL
     else:
         SMTPSERVER = smtplib.SMTP
 
-    # enviando o email mailflow
+    # enviando o email mailflow.
     try:
         SMTPSERVER
         PORTA = str(PORTA)
 
-	# aqui no assunto e mensagem irá o horário
+	# aqui no assunto e mensagem irá o horário.
         ASSUNTO="%s" %(str(datetime.now())[11:19])
         MENSAGEM=(str(datetime.now())[11:19])
         FROM=EMAIL
 
-        # destinatário
+        # destinatario.
         TO=mailflow
 
         serv=SMTPSERVER()
