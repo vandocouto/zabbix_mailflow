@@ -18,7 +18,7 @@ def mailflow():
 	
     while (str(valida) == "Erro-3"):
     	time.sleep(5)
-	valida=checkmail()
+	valida=checkmail(sys.argv[2],sys.argv[3])
 
     # compara o tempo de entrega.
     if (str(valida) < '0:01:30'):
