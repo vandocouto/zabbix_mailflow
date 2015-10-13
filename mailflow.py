@@ -3,7 +3,7 @@
 
 from enviamail import enviamail 
 from checkmail import checkmail
-#from limpamail import limpamail
+from limpamail import limpamail
 from acesso import acesso
 import time
 import sys
