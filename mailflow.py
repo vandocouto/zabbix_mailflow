@@ -1,6 +1,8 @@
 #!/usr/bin/python
 #-=- encoding: utf-8 -=-
 
+
+# variaveis
 from enviamail import enviamail 
 from checkmail import checkmail
 from limpamail import limpamail
