@@ -18,7 +18,7 @@ def mailflow():
     time.sleep(10)
     valida=checkmail(sys.argv[2],sys.argv[3])
 	
-while (str(valida) == "Erro-3"):
+    while (str(valida) == "Erro-3"):
     	time.sleep(5)
 	valida=checkmail(sys.argv[2],sys.argv[3])
 
